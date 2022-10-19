@@ -38,40 +38,42 @@ private:
 		}
 
 		void tip() {
-			cout << "»¶Ó­Ê¹ÓÃ¡°Äã°ïÎÒÖú¡±ÎïÆ·½»»»Èí¼þ£¡" << endl;
-			cout << "Ìí¼ÓÎïÆ·ÐÅÏ¢ÇëÊäÈë1" << endl;
-			cout << "É¾³ýÎïÆ·ÐÅÏ¢ÇëÊäÈë2" << endl;
-			cout << "ÏÔÊ¾ÎïÆ·ÁÐ±íÇëÊäÈë3" << endl;
-			cout << "²éÕÒÎïÆ·ÐÅÏ¢ÇëÊäÈë4" << endl;
-			cout << "ÍË³öÇëÊäÈë5" << endl;
+			cout << "æ¬¢è¿Žä½¿ç”¨â€œä½ å¸®æˆ‘åŠ©â€ç‰©å“äº¤æ¢è½¯ä»¶ï¼" << endl;
+			cout << "æ·»åŠ ç‰©å“ä¿¡æ¯è¯·è¾“å…¥1" << endl;
+			cout << "åˆ é™¤ç‰©å“ä¿¡æ¯è¯·è¾“å…¥2" << endl;
+			cout << "æ˜¾ç¤ºç‰©å“åˆ—è¡¨è¯·è¾“å…¥3" << endl;
+			cout << "æŸ¥æ‰¾ç‰©å“ä¿¡æ¯è¯·è¾“å…¥4" << endl;
+			cout << "é€€å‡ºè¯·è¾“å…¥5" << endl;
 		}
-
+		
+		//ç›´æŽ¥æ·»åŠ ç‰©å“ï¼Œæ— ç”¨æˆ·äº¤äº’ï¼Œä»…ç”¨äºŽåœ¨ç”¨æˆ·æ“ä½œä¹‹å‰ä»Žuserdata.txtä¸­è¯»å–ä¹‹å‰å‚¨å­˜çš„æ•°æ®
 		void AddItemDirectly(const item tmp) {
 			list.push_back(tmp);
 		}
-
+		
+		//æ·»åŠ ç‰©å“ï¼Œå«ç”¨æˆ·ä½¿ç”¨æç¤º
 		void AddItem() {
 			char tmpItemName[50];
 			char tmpOwnerName[50];
 
-			cout << "ÇëÊäÈëÒªÌí¼ÓµÄÎïÆ·Ãû³Æ:" << endl;
+			cout << "è¯·è¾“å…¥è¦æ·»åŠ çš„ç‰©å“åç§°:" << endl;
 			cin >> tmpItemName;
-			cout << "ÇëÊäÈë¸ÃÎïÆ·µÄÎïÖ÷ÐÕÃû:" << endl;
+			cout << "è¯·è¾“å…¥è¯¥ç‰©å“çš„ç‰©ä¸»å§“å:" << endl;
 			cin >> tmpOwnerName;
 
 			item tmp(tmpItemName, tmpOwnerName);
 			list.push_back(tmp);
-			cout << "ÎïÆ·ÐÅÏ¢Ìí¼Ó³É¹¦£¡" << endl;
+			cout << "ç‰©å“ä¿¡æ¯æ·»åŠ æˆåŠŸï¼" << endl;
 		}
 
-		//µ±ÁÐ±íÖÐÓÐ¶à¼þ·ûºÏÒªÇóµÄÎïÆ·Ê±£¬Ö»ÄÜÉ¾³ý×î¿¿Ç°µÄÒ»¼þÎïÆ·
+		//åˆ é™¤ç‰©å“ï¼šå½“åˆ—è¡¨ä¸­æœ‰å¤šä»¶ç¬¦åˆè¦æ±‚çš„ç‰©å“æ—¶ï¼Œåªèƒ½åˆ é™¤æœ€é å‰çš„ä¸€ä»¶ç‰©å“
 		void DeleteItem() {
 			char tmpItemName[50];
 			char tmpOwnerName[50];
 
-			cout << "ÇëÊäÈëÒªÉ¾³ýµÄÎïÆ·Ãû³Æ:" << endl;
+			cout << "è¯·è¾“å…¥è¦åˆ é™¤çš„ç‰©å“åç§°:" << endl;
 			cin >> tmpItemName;
-			cout << "ÇëÊäÈë¸ÃÎïÆ·µÄÎïÖ÷ÐÕÃû:" << endl;
+			cout << "è¯·è¾“å…¥è¯¥ç‰©å“çš„ç‰©ä¸»å§“å:" << endl;
 			cin >> tmpOwnerName;
 
 			vector<item>::iterator it;
@@ -90,18 +92,18 @@ private:
 			}
 
 			if(flag) 
-				cout << "ÎïÆ·ÐÅÏ¢É¾³ý³É¹¦£¡" << endl;
+				cout << "ç‰©å“ä¿¡æ¯åˆ é™¤æˆåŠŸï¼" << endl;
 			else 
-				cout << "Î´ÕÒµ½ÒªÉ¾³ýµÄÎïÆ·ÐÅÏ¢£¡" << endl;
+				cout << "æœªæ‰¾åˆ°è¦åˆ é™¤çš„ç‰©å“ä¿¡æ¯ï¼" << endl;
 		}
 
 		void ShowItem() {
 			vector<item>::iterator it;
 			int number = 1;
 
-			cout << left << setw(10) << "ÐòºÅ" << " " 
-				<< left << setw(12) << "ÎïÆ·Ãû³Æ" << " " 
-				<< left << setw(12) << "ÎïÖ÷Ãû³Æ" << right << endl;
+			cout << left << setw(10) << "åºå·" << " " 
+				<< left << setw(12) << "ç‰©å“åç§°" << " " 
+				<< left << setw(12) << "ç‰©ä¸»åç§°" << right << endl;
 			for (it = list.begin(); it != list.end(); it++) 
 			{
 				cout << left << setw(10) << number << " "
@@ -110,23 +112,24 @@ private:
 				number++;
 			}
 
-			cout << "ÎïÆ·Çåµ¥ÖÐ¹²ÓÐ" << number-1 << "Ìõ¼ÇÂ¼" << endl;
+			cout << "ç‰©å“æ¸…å•ä¸­å…±æœ‰" << number-1 << "æ¡è®°å½•" << endl;
 		}
 
 		void SearchItem() {
 			char tmpItemName[50];
 
-			cout << "ÇëÊäÈëÒª²éÕÒµÄÎïÆ·Ãû³Æ:" << endl;
+			cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ç‰©å“åç§°:" << endl;
 			cin >> tmpItemName;
 
 			vector<item>::iterator it;
 			int index = 0;
 			int number = 0;
 
-			cout << left << setw(10) << "ÐòºÅ" << " "
-				<< left << setw(12) << "ÎïÆ·Ãû³Æ" << " "
-				<< left << setw(12) << "ÎïÖ÷Ãû³Æ" << right << endl;
-
+			cout << left << setw(10) << "åºå·" << " "
+				<< left << setw(12) << "ç‰©å“åç§°" << " "
+				<< left << setw(12) << "ç‰©ä¸»åç§°" << right << endl;
+			
+			//éåŽ†å¯»æ‰¾
 			for (it = list.begin(); it != list.end(); it++,index++)
 				if (strcmp(list[index].itemName, tmpItemName) == 0) {
 					number++;
@@ -135,7 +138,7 @@ private:
 						<< left << setw(12) << list[index].ownerName << right << endl;
 				}
 			
-			cout << "¹²ÕÒµ½" << number << "Ìõ·ûºÏÒªÇóµÄÎïÆ·ÐÅÏ¢" << endl;
+			cout << "å…±æ‰¾åˆ°" << number << "æ¡ç¬¦åˆè¦æ±‚çš„ç‰©å“ä¿¡æ¯" << endl;
 		}
 
 };
